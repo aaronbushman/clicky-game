@@ -13,6 +13,8 @@ class App extends Component {
     highscore: 0
   };
 
+  
+
   gameEnd = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, function() {
@@ -22,7 +24,7 @@ class App extends Component {
     this.state.albums.forEach(card => {
       card.count = 0;
     });
-    alert(`Game Over :( \nscore: ${this.state.score}`);
+    alert(`You clicked one twice! Game Over! \nscore: ${this.state.score}`);
     this.setState({score: 0});
     return true;
   }
@@ -47,7 +49,8 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header></Header>
+        <Header score={this.state.score} highscore={this.state.highscore}></Header>
+        <br />
         <div className="card-columns">
         {this.state.albums.map(album => (
           <Album
