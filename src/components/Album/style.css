@@ -1,0 +1,19 @@
+.card > img {
+    width: 300px;
+    height: 300px;
+    /* position: relative; */
+  }
+
+  .card {
+      float: left;
+      position: relative;
+      width: 25%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .card {
+      width: 50%;
+    }
+  }
+
+
